@@ -10,7 +10,7 @@ export default function Home() {
         className="w-[180px] rounded-full"
         alt="fluke"
       />
-      <div className="text-ph-lg uppercase">
+      <div className="w-full text-ph-lg uppercase">
         <p>web</p> <p>delevoper</p>
       </div>
       <p className="text-ph-sm font-light leading-[35px]">

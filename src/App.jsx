@@ -9,7 +9,6 @@ function App() {
     <>
       <div className="flex flex-col font-inknut text-white">
         <Background />
-
         <Home />
         <About />
         <Projects />
