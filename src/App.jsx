@@ -1,19 +1,18 @@
-import Home from './pages/Home';
-import SilderBar from './ui/SildeBar';
-import './style/index.css';
-import ContainerPage from './ui/ContainerPage';
+import About from "./pages/About";
+import Home from "./pages/Home";
+import Projects from "./pages/Projects";
+import "./style/index.css";
+import Background from "./ui/Background";
 
 function App() {
   return (
     <>
-      <div className="text-white flex flex-col">
-        <SilderBar />
-        <ContainerPage>
-          <Home />
-        </ContainerPage>
-        <ContainerPage>
-          <Home />
-        </ContainerPage>
+      <div className="flex flex-col font-inknut text-white">
+        <Background />
+
+        <Home />
+        <About />
+        <Projects />
       </div>
     </>
   );

@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer root {
+  .btn-icon {
+    @apply btn btn-ghost w-max h-max p-[2px] transition-colors duration-200  hover:text-pr-button;
+  }
+}

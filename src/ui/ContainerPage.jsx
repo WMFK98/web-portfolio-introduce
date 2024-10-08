@@ -1,5 +1,11 @@
-import React from 'react';
+export default function ContainerPage({ children, type }) {
+  const style = type === "center" ? "items-center justify-center" : "";
 
-export default function ContainerPage({ children }) {
-  return <div className="bg-pr-black-200 h-screen relative">{children}</div>;
+  return (
+    <div
+      className={`flex h-screen w-screen flex-col py-[100px] ${style} gap-[33px] px-[66px]`}
+    >
+      {children}
+    </div>
+  );
 }

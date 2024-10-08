@@ -1,5 +1,6 @@
-import React from 'react';
+import React from "react";
+import ContainerPage from "../ui/ContainerPage";
 
 export default function Projects() {
-  return <div>Projects</div>;
+  return <ContainerPage></ContainerPage>;
 }
