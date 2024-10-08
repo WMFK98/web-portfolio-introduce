@@ -3,7 +3,7 @@ export default function ContainerPage({ children, type }) {
 
   return (
     <div
-      className={`flex h-screen w-screen flex-col py-[100px] ${style} gap-[33px] px-[35px]`}
+      className={`flex max-h-max min-h-screen w-screen flex-col py-[100px] ${style} gap-[33px] px-[35px]`}
     >
       {children}
     </div>
