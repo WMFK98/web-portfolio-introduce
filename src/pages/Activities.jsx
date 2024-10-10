@@ -1,5 +1,10 @@
-import React from 'react';
+import React from "react";
+import ContainerPage from "../ui/ContainerPage";
 
 export default function Activities() {
-  return <div>Activities</div>;
+  return (
+    <ContainerPage>
+      <header className="text-center text-ph-lg">Activities</header>
+    </ContainerPage>
+  );
 }

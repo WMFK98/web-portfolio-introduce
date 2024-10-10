@@ -18,6 +18,7 @@ export default {
         "pr-black-100": "#26333F",
         "pr-button": "#BEFFFF",
         "nor-button": "#3B4752",
+        
         blur: "#101010",
       },
     },
