@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React, { cloneElement, useState } from "react";
 import { FaExternalLinkAlt } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 export default function CardProject({ project }) {
-  const { image, topic, info, demo, github } = project;
+  const { image, topic, info, demo, github, stacks } = project;
   const [showInfo, setShowInfo] = useState();
   return (
     <div
@@ -10,7 +10,7 @@ export default function CardProject({ project }) {
       onMouseLeave={() => setShowInfo(false)}
       className="relative flex h-[152px] overflow-hidden rounded-lg"
     >
-      <div className="flex h-full w-full flex-col items-end justify-start gap-2 p-3">
+      <div className="flex h-full w-full flex-col items-end justify-between gap-1 p-2">
         <div className="flex gap-2">
           <a target="_blank" href={github}>
             <button className="btn btn-sm rounded-full">
@@ -30,6 +30,11 @@ export default function CardProject({ project }) {
             <p>{info}</p>
           </div>
         )}
+        <ul className="mr-auto flex gap-2">
+          {stacks.map((icon, index) => (
+            <li key={index}>{icon}</li>
+          ))}
+        </ul>
       </div>
 
       <img

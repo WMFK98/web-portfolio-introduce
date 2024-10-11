@@ -11,6 +11,8 @@ import {
   SiMysql,
   SiNginx,
   SiDocker,
+  SiUbuntu,
+  SiVercel,
 } from "react-icons/si";
 import { RiNextjsFill } from "react-icons/ri";
 import {
@@ -23,12 +25,12 @@ import {
 } from "react-icons/fa";
 export default function ListSkill() {
   const iconSkills = [
-    { icon: <SiJavascript />, name: "JavaScript" },
-    { icon: <SiTypescript />, name: "TypeScript" },
     { icon: <RiNextjsFill />, name: "Next.js" },
     { icon: <FaReact />, name: "React" },
     { icon: <SiReactquery />, name: "React Query" },
     { icon: <SiRedux />, name: "Redux" },
+    { icon: <SiJavascript />, name: "JavaScript" },
+    { icon: <SiTypescript />, name: "TypeScript" },
     { icon: <FaVuejs />, name: "Vue.js" },
     { icon: <SiStyledcomponents />, name: "Styled Components" },
     { icon: <SiTailwindcss />, name: "Tailwind CSS" },
@@ -38,8 +40,10 @@ export default function ListSkill() {
     { icon: <SiMysql />, name: "MySQL" },
     { icon: <FaLinux />, name: "Linux" },
     { icon: <SiNginx />, name: "Nginx" },
+    { icon: <SiUbuntu />, name: "Ubuntu" },
     { icon: <SiDocker />, name: "Docker" },
     { icon: <FaGitAlt />, name: "Git" },
+    { icon: <SiVercel />, name: "Vercel" },
     { icon: <FaFigma />, name: "Figma" },
   ];
 
