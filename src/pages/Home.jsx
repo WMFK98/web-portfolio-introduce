@@ -11,7 +11,7 @@ export default function Home() {
         alt="fluke"
       />
       <div className="w-full text-ph-lg uppercase">
-        <p>web</p> <p>delevoper</p>
+        <p>Software</p> <p>delevoper</p>
       </div>
       <p className="text-ph-sm font-light leading-[35px]">
         I am an enthusiastic IT student at KMUTT with a passion for learning and

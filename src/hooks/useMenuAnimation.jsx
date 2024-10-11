@@ -8,22 +8,25 @@ export function useMenuAnimation(isOpen) {
       ? [
           [
             "nav",
-            { transform: "translateX(0%)" },
+            { transform: "translateY(0%)" },
             { ease: [0.08, 0.65, 0.53, 0.96], duration: 0.6 },
           ],
           [
             "li",
-            { transform: "scale(1)", opacity: 1, filter: "blur(0px)" },
-            { delay: stagger(0.05), at: "-0.1" },
+            // { transform: "scale(1)", opacity: 1, filter: "blur(0px)" },
+            { transform: "translateY(0%)", filter: "blur(0px)" },
+            { delay: stagger(0.05), at: "-0.5" },
           ],
         ]
       : [
           [
             "li",
-            { transform: "scale(0.5)", opacity: 0, filter: "blur(10px)" },
-            { delay: stagger(0.05, { from: "last" }), at: "<" },
+
+            // { transform: "scale(0.5)", opacity: 0, filter: "blur(10px)" },
+            { transform: "translateY(-100%)", filter: "blur(10px)" },
+            { delay: stagger(0.01, { from: "last" }), at: "<" },
           ],
-          ["nav", { transform: "translateX(-100%)" }, { at: "-0.1" }],
+          ["nav", { transform: "translateY(-100%)" }, { at: "-0.1" }],
         ];
 
     animate([
