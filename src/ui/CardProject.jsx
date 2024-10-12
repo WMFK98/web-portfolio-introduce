@@ -7,9 +7,6 @@ export default function CardProject({ project }) {
   const { image, topic, info, demo, github, stacks } = project;
   const [showInfo, setShowInfo] = useState();
 
-  // inView("li.project", ({ target }) =>
-  //   animate(target, { opacity: 1 }, { duration: 1, repeat: 0 }),
-  // );
 
   return (
     <li

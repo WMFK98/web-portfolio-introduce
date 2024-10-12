@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import {
   SiTypescript,
   SiJavascript,
@@ -23,6 +23,9 @@ import {
   FaGitAlt,
   FaFigma,
 } from "react-icons/fa";
+import useSkillAnimation from "../hooks/useSkillAnimation";
+import { useInView } from "framer-motion";
+
 export default function ListSkill() {
   const iconSkills = [
     { icon: <RiNextjsFill />, name: "Next.js" },
@@ -46,17 +49,21 @@ export default function ListSkill() {
     { icon: <SiVercel />, name: "Vercel" },
     { icon: <FaFigma />, name: "Figma" },
   ];
-
+  const skillsEle = useRef();
+  const isInView = useInView(skillsEle); // Detects if the element is in view
+  const scope = useSkillAnimation(isInView);
   return (
-    <ul className="grid grid-cols-6 gap-3">
-      {iconSkills.map(({ icon, name }, index) => (
-        <li key={index} className="tooltip" data-tip={name}>
-          {React.cloneElement(icon, {
-            size: "40px",
-            className: "btn-icon tooltip",
-          })}
-        </li>
-      ))}
-    </ul>
+    <div ref={skillsEle}>
+      <ul ref={scope} className="grid grid-cols-6 gap-3">
+        {iconSkills.map(({ icon, name }, index) => (
+          <li key={index} className="tooltip" data-tip={name}>
+            {React.cloneElement(icon, {
+              size: "40px",
+              className: "btn-icon tooltip",
+            })}
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 }
