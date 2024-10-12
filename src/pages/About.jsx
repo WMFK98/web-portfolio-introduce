@@ -3,7 +3,7 @@ import ContainerPage from "../ui/ContainerPage";
 import ListSkill from "../ui/ListSkill";
 export default function About() {
   return (
-    <ContainerPage>
+    <ContainerPage id="about">
       <header className="text-center text-ph-lg">About Me</header>
       <div className="space-y-2">
         <p className="text-ph-md">Info</p>

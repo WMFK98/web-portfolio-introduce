@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import { createPortal } from "react-dom";
 import { IoMenu } from "react-icons/io5";
-import { useMenuAnimation } from "../hooks/useMenuAnimation";
+import { useNavbarAnimation } from "../hooks/useNavbarAnimation";
 import { FaXmark } from "react-icons/fa6";
+import { Link } from "react-scroll";
 
 export default function MenuPh() {
   const [isOpen, setIsOpen] = useState(false);
-  const scope = useMenuAnimation(isOpen);
+  const scope = useNavbarAnimation(isOpen);
 
   return (
     <div ref={scope}>
@@ -31,19 +32,43 @@ export default function MenuPh() {
         </nav>
         <ul className="absolute top-0 flex h-screen w-screen flex-col items-center gap-3 pt-[30%] text-white">
           <li>
-            <button className="btn btn-lg w-[160px] rounded-3xl border-none bg-pr-black-100 py-4 text-center">
+            <Link
+              to="home"
+              smooth={true}
+              duration={500}
+              offset={0}
+              className="btn btn-ghost btn-lg w-[160px] rounded-3xl border-none py-4 text-center"
+              onClick={() => setIsOpen(false)}
+            >
               Home
-            </button>
+            </Link>
+            <hr />
           </li>
           <li>
-            <button className="btn btn-lg w-[160px] rounded-3xl border-none bg-pr-black-100 py-4 text-center">
+            <Link
+              to="about"
+              smooth={true}
+              duration={500}
+              offset={50}
+              className="btn btn-ghost btn-lg w-[160px] rounded-3xl border-none py-4 text-center"
+              onClick={() => setIsOpen(false)}
+            >
               About Me
-            </button>
+            </Link>
+            <hr />
           </li>
           <li>
-            <button className="btn btn-lg w-[160px] rounded-3xl border-none bg-pr-black-100 py-4 text-center">
-              Project
-            </button>
+            <Link
+              to="projects"
+              smooth={true}
+              duration={500}
+              offset={50}
+              className="btn btn-ghost btn-lg w-[160px] rounded-3xl border-none py-4 text-center"
+              onClick={() => setIsOpen(false)}
+            >
+              Projects
+            </Link>
+            <hr />
           </li>
         </ul>
       </div>

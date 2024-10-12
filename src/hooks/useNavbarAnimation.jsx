@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useAnimate, stagger } from "framer-motion";
-export function useMenuAnimation(isOpen) {
+export function useNavbarAnimation(isOpen) {
   const [scope, animate] = useAnimate();
 
   useEffect(() => {

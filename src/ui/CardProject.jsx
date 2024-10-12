@@ -1,16 +1,23 @@
-import React, { cloneElement, useState } from "react";
+import { animate, inView, useInView } from "framer-motion";
+
+import React, { useRef, useState } from "react";
 import { FaExternalLinkAlt } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 export default function CardProject({ project }) {
   const { image, topic, info, demo, github, stacks } = project;
   const [showInfo, setShowInfo] = useState();
+
+  // inView("li.project", ({ target }) =>
+  //   animate(target, { opacity: 1 }, { duration: 1, repeat: 0 }),
+  // );
+
   return (
-    <div
+    <li
       onMouseEnter={() => setShowInfo(true)}
       onMouseLeave={() => setShowInfo(false)}
-      className="relative flex h-[152px] overflow-hidden rounded-lg"
+      className="project relative flex h-[152px] overflow-hidden rounded-lg"
     >
-      <div className="flex h-full w-full flex-col items-end justify-between gap-1 p-2">
+      <div className="cardProject flex h-full w-full flex-col items-end justify-between gap-1 p-2">
         <div className="flex gap-2">
           <a target="_blank" href={github}>
             <button className="btn btn-sm rounded-full">
@@ -42,6 +49,6 @@ export default function CardProject({ project }) {
         src={image}
         alt="the-wild-oasis-customer"
       />
-    </div>
+    </li>
   );
 }

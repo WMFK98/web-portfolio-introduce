@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import CardProject from "./CardProject";
 import imgOasisCus from "/images/projects/the-wild-oasis-customer.webp";
 import imgOasisStaff from "/images/projects/the-wild-oasis-staff.webp";
@@ -34,6 +34,8 @@ import {
   FaCss3,
   FaSass,
 } from "react-icons/fa";
+import { useInView } from "framer-motion";
+import useSlideAnimation from "../hooks/useSlideAnimation";
 
 const projects = [
   {
@@ -144,18 +146,40 @@ const projects = [
 export default function ListCardProject() {
   const [isLazyShow, setIsLazyShow] = useState(true);
   const show = isLazyShow ? 4 : projects.length;
-
+  const btn = useRef();
+  const page = useRef();
+  const isInViewBtn = useInView(btn);
+  const isInViewProjects = useInView(page);
+  const scope = useSlideAnimation(isInViewProjects);
   return (
     <>
-      {projects
-        .map((project, index) => <CardProject key={index} project={project} />)
-        .slice(0, show)}
-      <button
-        onClick={() => setIsLazyShow((state) => !state)}
-        className="border-10 btn btn-ghost m-auto w-max rounded-xl border-nor-button px-5"
-      >
-        {isLazyShow ? "Show More" : "Hidden"}
-      </button>
+      <div ref={scope}>
+        <ul className="projects flex flex-col gap-5" ref={page}>
+          {projects
+            .map((project, index) => (
+              <CardProject key={index} project={project} />
+            ))
+            .slice(0, show)}
+          <button
+            ref={btn}
+            onClick={() => setIsLazyShow((state) => !state)}
+            className="border-10 btn btn-ghost m-auto w-max rounded-xl border-nor-button px-5"
+          >
+            {isLazyShow ? "Show More" : "Hidden"}
+          </button>
+        </ul>
+      </div>
+      {isInViewProjects && !isInViewBtn && !isLazyShow && (
+        <div className="flex justify-center">
+          <button
+            ref={btn}
+            onClick={() => setIsLazyShow((state) => !state)}
+            className="border-10 btn btn-ghost fixed top-[90%] rounded-xl border-nor-button bg-nor-button px-5"
+          >
+            {isLazyShow ? "Show More" : "Hidden"}
+          </button>
+        </div>
+      )}
     </>
   );
 }

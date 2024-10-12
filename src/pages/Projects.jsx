@@ -4,7 +4,7 @@ import ListCardProject from "../ui/ListCardProject";
 
 export default function Projects() {
   return (
-    <ContainerPage>
+    <ContainerPage id="projects">
       <header className="text-center text-ph-lg">Projects</header>
       <ListCardProject />
     </ContainerPage>

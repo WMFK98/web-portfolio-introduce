@@ -11,7 +11,7 @@ import MenuPh from "./ui/MenuPh";
 function App() {
   return (
     <>
-      <div className="relative flex w-max flex-col font-inknut text-white">
+      <div className="relative scroll-smooth flex w-max flex-col font-inknut text-white">
         <Background />
         <MenuPh />
         <Home />

@@ -4,7 +4,7 @@ import ContainerPage from "../ui/ContainerPage";
 
 export default function Home() {
   return (
-    <ContainerPage type="center">
+    <ContainerPage id='home' type="center">
       <img
         src="/images/ItsMe.webp"
         className="w-[180px] rounded-full"
