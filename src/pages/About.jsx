@@ -18,9 +18,9 @@ export default function About() {
             </p>
           </div>
           <div className="w-[50%]">
-            <div className="hidden h-[377px] overflow-hidden lg:block">
+            <div className="m-auto hidden h-[377px] w-[277px] overflow-hidden lg:block">
               <img
-                className="m-auto h-full scale-x-[-1] rounded-lg object-none"
+                className="m-auto h-full scale-x-[-1] rounded-lg object-cover"
                 src="/images/about-me.webp"
                 alt="about-me.webp"
               />

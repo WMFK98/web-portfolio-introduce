@@ -19,7 +19,7 @@ const home = forwardRef((_, ref) => {
         </div>
         <div className="flex flex-col gap-4">
           <div className="lg:text-des-xl w-full text-ph-lg uppercase">
-            <p>Web</p> <p>delevoper</p>
+            <p>WM's</p> <p>portfolio</p>
           </div>
           <p className="lg:text-des-sm text-ph-sm font-light leading-[35px]">
             👋 Hi, I'm an enthusiastic IT student at KMUTT with a passion for
