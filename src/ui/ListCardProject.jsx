@@ -151,85 +151,85 @@ export default function ListCardProject() {
   const isInViewBtn = useInView(btn);
   const isInViewProjects = useInView(page);
   const scope = useSlideAnimation(isInViewProjects);
+
   return (
-    <>
-      <div className="hidden h-max lg:flex" ref={scope}>
-        <ul
-          ref={page}
-          className="projects max-h-max min-h-full w-full flex-col"
-        >
-          <div className="mb-4 flex h-[35vh] gap-4">
-            <li className="project w-[65%]">
-              <CardProject project={projects[1]} />
-            </li>
-            <li className="project flex-auto">
-              <CardProject project={projects[2]} />
-            </li>
-          </div>
-
-          <div className="flex h-max gap-4">
-            <div className="flex h-full w-[25%] flex-col gap-4">
-              <li className="project h-[40vh]">
-                <CardProject project={projects[5]} />
+    <div ref={scope}>
+      <div ref={page}>
+        <div className="hidden h-max lg:flex">
+          <ul className="projects max-h-max min-h-full w-full flex-col">
+            <div className="mb-4 flex h-[35vh] gap-4">
+              <li key={1} className="w-[65%]">
+                <CardProject project={projects[1]} />
               </li>
-              <li className="project h-[40vh]">
-                <CardProject project={projects[6]} />
+              <li key={2} className="flex-auto">
+                <CardProject project={projects[2]} />
               </li>
             </div>
-            <div className="flex h-max flex-auto flex-col gap-4">
-              <div className="flex flex-auto gap-4">
-                <li className="project h-[25vh] w-[65%]">
-                  <CardProject project={projects[3]} />
-                </li>
-                <li className="project flex-auto">
-                  <CardProject project={projects[4]} />
-                </li>
-              </div>
-              <div className="flex flex-auto gap-4">
-                <li className="project h-[25vh] w-[55%]">
-                  <CardProject project={projects[7]} />
-                </li>
-                <li className="project flex-auto">
-                  <CardProject project={projects[8]} />
-                </li>
-              </div>
-              <li className="project h-[55vh]">
-                <CardProject project={projects[0]} />
-              </li>
-            </div>
-          </div>
-        </ul>
-      </div>
 
-      <div className="lg:hidden" ref={scope}>
-        <ul className="projects flex flex-col gap-5" ref={page}>
-          {projects
-            .map((project, index) => (
-              <li>
-                <CardProject key={index} project={project} />
-              </li>
-            ))
-            .slice(0, show)}
-          <button
-            ref={btn}
-            onClick={() => setIsLazyShow((state) => !state)}
-            className="border-10 btn btn-ghost m-auto w-max rounded-xl border-nor-button px-5"
-          >
-            {isLazyShow ? "Show More" : "Hidden"}
-          </button>
-        </ul>
-      </div>
-      {isInViewProjects && !isInViewBtn && !isLazyShow && (
-        <div className="flex justify-center">
-          <button
-            ref={btn}
-            onClick={() => setIsLazyShow((state) => !state)}
-            className="border-10 btn btn-ghost fixed top-[90%] rounded-xl border-nor-button bg-pr-black-200 px-5"
-          >
-            {isLazyShow ? "Show More" : "Hidden"}
-          </button>
+            <div className="flex h-max gap-4">
+              <div className="flex h-full w-[25%] flex-col gap-4">
+                <li className="h-[40vh]">
+                  <CardProject project={projects[5]} />
+                </li>
+                <li className="h-[40vh]">
+                  <CardProject project={projects[6]} />
+                </li>
+              </div>
+              <div className="flex h-max flex-auto flex-col gap-4">
+                <div className="flex flex-auto gap-4">
+                  <li className="h-[25vh] w-[65%]">
+                    <CardProject project={projects[3]} />
+                  </li>
+                  <li className="flex-auto">
+                    <CardProject project={projects[4]} />
+                  </li>
+                </div>
+                <div className="flex flex-auto gap-4">
+                  <li className="h-[25vh] w-[55%]">
+                    <CardProject project={projects[7]} />
+                  </li>
+                  <li className="flex-auto">
+                    <CardProject project={projects[8]} />
+                  </li>
+                </div>
+                <li className="h-[55vh]">
+                  <CardProject project={projects[0]} />
+                </li>
+              </div>
+            </div>
+          </ul>
         </div>
-      )}
-    </>
+
+        <div className="lg:hidden">
+          <ul className="projects flex flex-col gap-5">
+            {projects
+              .map((project, index) => (
+                <li>
+                  <CardProject key={index} project={project} />
+                </li>
+              ))
+              .slice(0, show)}
+            <button
+              ref={btn}
+              onClick={() => setIsLazyShow((state) => !state)}
+              className="border-10 btn btn-ghost m-auto w-max rounded-xl border-nor-button px-5"
+            >
+              {isLazyShow ? "Show More" : "Hidden"}
+            </button>
+          </ul>
+        </div>
+        {isInViewProjects && !isInViewBtn && !isLazyShow && (
+          <div className="flex justify-center">
+            <button
+              ref={btn}
+              onClick={() => setIsLazyShow((state) => !state)}
+              className="border-10 btn btn-ghost fixed top-[90%] rounded-xl border-nor-button bg-pr-black-200 px-5"
+            >
+              {isLazyShow ? "Show More" : "Hidden"}
+            </button>
+          </div>
+        )}
+      </div>
+    </div>
   );
 }

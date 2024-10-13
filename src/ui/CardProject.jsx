@@ -41,7 +41,7 @@ export default function CardProject({ project }) {
       </div>
 
       <img
-        className={`absolute z-[-1] ${showInfo && "opacity-15"} w-full object-fill transition-all duration-200 hover:bg-black lg:h-full lg:object-cover lg:object-center`}
+        className={`absolute z-[-1] ${showInfo && "opacity-15"} w-full object-fill object-center transition-all duration-200 hover:bg-black lg:h-full lg:object-cover`}
         src={image}
         alt="the-wild-oasis-customer"
       />
