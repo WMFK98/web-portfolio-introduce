@@ -10,7 +10,7 @@ export default function MenuPh() {
   const scope = useNavbarAnimation(isOpen);
 
   return (
-    <div ref={scope}>
+    <div className="lg:hidden" ref={scope}>
       <div
         onClick={() => setIsOpen((state) => !state)}
         className="fixed right-5 top-5 z-[1000]"

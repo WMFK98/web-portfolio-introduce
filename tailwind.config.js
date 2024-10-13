@@ -10,6 +10,11 @@ export default {
         "ph-lg": "34px",
         "ph-md": "16px",
         "ph-sm": "12px",
+        "des-xl": "83px",
+        "des-lg": "50px",
+        "des-sm": "16px",
+        "des-md": "24px",
+        "des-sm": "16px",
       },
       colors: {
         "pr-white-100": "#ffffff",
@@ -18,7 +23,7 @@ export default {
         "pr-black-100": "#26333F",
         "pr-button": "#BEFFFF",
         "nor-button": "#3B4752",
-        
+
         blur: "#101010",
       },
     },

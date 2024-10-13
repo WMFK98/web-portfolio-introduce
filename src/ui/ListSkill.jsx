@@ -50,11 +50,11 @@ export default function ListSkill() {
     { icon: <FaFigma />, name: "Figma" },
   ];
   const skillsEle = useRef();
-  const isInView = useInView(skillsEle); // Detects if the element is in view
+  const isInView = useInView(skillsEle);
   const scope = useSkillAnimation(isInView);
   return (
     <div ref={skillsEle}>
-      <ul ref={scope} className="grid grid-cols-6 gap-3">
+      <ul ref={scope} className="grid grid-cols-6 gap-3 lg:grid-cols-8">
         {iconSkills.map(({ icon, name }, index) => (
           <li key={index} className="tooltip" data-tip={name}>
             {React.cloneElement(icon, {

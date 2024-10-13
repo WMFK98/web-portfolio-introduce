@@ -7,17 +7,20 @@ import Background from "./ui/Background";
 import { IoMenu } from "react-icons/io5";
 import { createPortal } from "react-dom";
 import MenuPh from "./ui/MenuPh";
+import SlidebarDes from "./ui/SlidebarDes";
+import { useRef } from "react";
 
 function App() {
+  const homeRef = useRef(null);
   return (
     <>
-      <div className="relative scroll-smooth flex w-max flex-col font-inknut text-white">
+      <div className="max-w-screen relative flex flex-col overflow-hidden font-inknut text-white">
         <Background />
         <MenuPh />
-        <Home />
+        <Home ref={homeRef} />
         <About />
         <Projects />
-        {/* <Activities /> */}
+        <SlidebarDes homeRef={homeRef} />
       </div>
     </>
   );
