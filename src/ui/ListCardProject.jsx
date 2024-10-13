@@ -201,7 +201,7 @@ export default function ListCardProject() {
         </ul>
       </div>
 
-      {/* <div className="lg:hidden" ref={scope}>
+      <div className="lg:hidden" ref={scope}>
         <ul className="projects flex flex-col gap-5" ref={page}>
           {projects
             .map((project, index) => (
@@ -229,7 +229,7 @@ export default function ListCardProject() {
             {isLazyShow ? "Show More" : "Hidden"}
           </button>
         </div>
-      )} */}
+      )}
     </>
   );
 }
