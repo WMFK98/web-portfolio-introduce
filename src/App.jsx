@@ -9,6 +9,8 @@ import { createPortal } from "react-dom";
 import MenuPh from "./ui/MenuPh";
 import SlidebarDes from "./ui/SlidebarDes";
 import { useRef } from "react";
+import { useFollowPointer } from "./hooks/useFollowPointer";
+import { motion, useInView } from "framer-motion";
 
 function App() {
   const homeRef = useRef(null);
@@ -16,6 +18,9 @@ function App() {
   const projectRef = useRef(null);
 
   const trigger = { homeRef, aboutRef, projectRef };
+  const sportlightRef = useRef();
+  const inViewProject = useInView(projectRef);
+  const { x, y } = useFollowPointer(sportlightRef);
 
   return (
     <>
@@ -24,8 +29,13 @@ function App() {
         <MenuPh />
         <Home ref={homeRef} />
         <About />
-        <Projects />
+        <Projects ref={projectRef} />
         <SlidebarDes homeRef={homeRef} />
+        <motion.div
+          ref={sportlightRef}
+          style={{ x, y }}
+          className={"overlay"}
+        ></motion.div>
       </div>
     </>
   );
