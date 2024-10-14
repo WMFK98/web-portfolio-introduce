@@ -71,6 +71,7 @@ const projects = [
     ],
     demo: "https://the-wild-osis-customer-fix.vercel.app",
     github: "https://github.com/WMFK98/the-wild-osis-customer",
+    position: "object-bottom",
   },
   {
     topic: "The Wild Oasis - Staff",
@@ -86,6 +87,7 @@ const projects = [
     ],
     demo: "https://the-wild-osis.vercel.app",
     github: "https://github.com/WMFK98/the-wild-osis",
+    position: "object-top",
   },
 
   {
@@ -111,6 +113,7 @@ const projects = [
     stacks: [<FaHtml5 />, <FaSass />, <SiJavascript />, <SiVercel />],
     demo: "https://forkify-nine-mu.vercel.app",
     github: "https://github.com/WMFK98/complete-javascript-course",
+    position: "object-top",
   },
 
   {
@@ -120,6 +123,7 @@ const projects = [
     stacks: [<FaHtml5 />, <FaCss3 />, <SiJavascript />, <SiVercel />],
     demo: "https://mapty-orcin.vercel.app",
     github: "https://github.com/WMFK98/complete-javascript-course",
+    position: "object-top",
   },
   {
     topic: "Bankist Landing",
@@ -167,7 +171,7 @@ function DesktopList() {
                   <CardProject project={projects[5]} />
                 </li>
                 <li className="h-[40vh]">
-                  <CardProject project={projects[6]} />
+                  <CardProject project={projects[6]} postion="object-left" />
                 </li>
               </div>
               <div className="flex h-max flex-auto flex-col gap-4">
@@ -215,7 +219,11 @@ function PhoneList() {
             {projects
               .map((project, index) => (
                 <li>
-                  <CardProject key={index} project={project} />
+                  <CardProject
+                    key={index}
+                    project={project}
+                    postion={project.position}
+                  />
                 </li>
               ))
               .slice(0, show)}
