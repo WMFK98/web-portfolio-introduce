@@ -14,7 +14,7 @@ export function useSlidebarAnimation(isOpen) {
           [
             "li",
             // { transform: "scale(1)", opacity: 1, filter: "blur(0px)" },
-            { transform: "translateX(0%)", filter: "blur(0px)" },
+            { transform: "translateX(40vh)", opacity: 1, filter: "blur(0px)" },
             { delay: stagger(0.05), at: "-0.5" },
           ],
         ]
@@ -23,7 +23,11 @@ export function useSlidebarAnimation(isOpen) {
             "li",
 
             // { transform: "scale(0.5)", opacity: 0, filter: "blur(10px)" },
-            { transform: "translateX(-30vh)", filter: "blur(10px)" },
+            {
+              transform: "translateX(-40vh)",
+              opacity: 0,
+              filter: "blur(10px)",
+            },
             { delay: stagger(0.01, { from: "last" }), at: "<" },
           ],
           ["nav", { transform: "translateX(-100%)" }, { at: "-0.1" }],

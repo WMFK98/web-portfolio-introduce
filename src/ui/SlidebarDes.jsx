@@ -12,7 +12,7 @@ export default function SlidebarDes({ homeRef }) {
   return (
     <nav
       ref={scope}
-      className="fixed hidden h-screen justify-center gap-4 px-[35px] text-white lg:flex lg:flex-col"
+      className="fixed ml-[-40vh] hidden h-screen justify-center gap-4 px-[35px] text-white lg:flex lg:flex-col"
     >
       <ul className="flex h-full flex-col justify-center gap-4">
         <li>

@@ -12,6 +12,11 @@ import { useRef } from "react";
 
 function App() {
   const homeRef = useRef(null);
+  const aboutRef = useRef(null);
+  const projectRef = useRef(null);
+
+  const trigger = { homeRef, aboutRef, projectRef };
+
   return (
     <>
       <div className="max-w-screen relative flex flex-col overflow-hidden font-inknut text-white">
