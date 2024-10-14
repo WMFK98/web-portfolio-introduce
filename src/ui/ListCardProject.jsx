@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import CardProject from "./CardProject";
 import imgOasisCus from "/images/projects/the-wild-oasis-customer.webp";
 import imgOasisStaff from "/images/projects/the-wild-oasis-staff.webp";
@@ -36,6 +36,7 @@ import {
 } from "react-icons/fa";
 import { useInView } from "framer-motion";
 import useSlideAnimation from "../hooks/useSlideAnimation";
+import useCheckMoreScreen from "../hooks/useCheckMoreScreen";
 
 const projects = [
   {
@@ -138,24 +139,24 @@ const projects = [
   },
 ];
 export default function ListCardProject() {
-  const [isLazyShow, setIsLazyShow] = useState(true);
-  const show = isLazyShow ? 4 : projects.length;
-  const btn = useRef();
+  const isMore = useCheckMoreScreen(1024);
+  return isMore ? <DesktopList /> : <PhoneList />;
+}
+
+function DesktopList() {
   const page = useRef();
-  const isInViewBtn = useInView(btn);
   const isInViewProjects = useInView(page);
   const scope = useSlideAnimation(isInViewProjects);
-
   return (
     <div ref={scope}>
       <div ref={page}>
-        <div className="hidden h-max lg:flex">
+        <div className="h-max lg:flex">
           <ul className="projects max-h-max min-h-full w-full flex-col">
             <div className="mb-4 flex h-[35vh] gap-4">
-              <li key={1} className="w-[65%]">
+              <li className="w-[65%]">
                 <CardProject project={projects[1]} />
               </li>
-              <li key={2} className="flex-auto">
+              <li className="flex-auto">
                 <CardProject project={projects[2]} />
               </li>
             </div>
@@ -193,8 +194,23 @@ export default function ListCardProject() {
             </div>
           </ul>
         </div>
+      </div>
+    </div>
+  );
+}
 
-        <div className="lg:hidden">
+function PhoneList() {
+  const page = useRef();
+  const btn = useRef();
+  const [isLazyShow, setIsLazyShow] = useState(true);
+  const isInViewBtn = useInView(btn);
+  const show = isLazyShow ? 4 : projects.length;
+  const isInViewProjects = useInView(page);
+  const scope = useSlideAnimation(isInViewProjects);
+  return (
+    <div ref={scope}>
+      <div ref={page}>
+        <div className="">
           <ul className="projects flex flex-col gap-5">
             {projects
               .map((project, index) => (
