@@ -9,12 +9,12 @@ export default function About() {
         <Topic>About Me</Topic>
         <div className="flex w-full flex-col justify-between gap-[33px] lg:flex-row">
           <div className="space-y-2">
-            <p className="lg:text-des-md text-ph-md">Info</p>
+            <p className="text-ph-md lg:text-des-md">Info</p>
             <hr />
-            <p className="lg:text-des-sm text-ph-sm font-light leading-7 lg:leading-[4rem]">
+            <p className="text-ph-sm font-light leading-7 lg:text-des-sm lg:leading-[4rem]">
               Nickname: Fluke <br /> Name : Wichira Marakompa <br /> Birthdate:
-              8 april 2004 <br /> Interest: front-end developer, Hobbies: Game,
-              Gym, Movie
+              8 april 2004 <br /> Interest: front-end developer <br /> Hobbies:
+              Game, Gym, Movie
             </p>
           </div>
           <div className="w-[50%]">
@@ -29,9 +29,9 @@ export default function About() {
         </div>
         <div className="flex flex-col justify-between gap-[33px] lg:flex-row">
           <div className="space-y-2 lg:order-1 lg:w-[50%]">
-            <p className="lg:text-des-md text-ph-md">Education</p>
+            <p className="text-ph-md lg:text-des-md">Education</p>
             <hr />
-            <div className="lg:text-des-sm text-ph-sm font-light leading-7 lg:leading-10">
+            <div className="text-ph-sm font-light leading-7 lg:text-des-sm lg:leading-10">
               <p>King Mongkut's University of Technology Thonburi (KMUTT) </p>
               <p className="ml-[30px] list-item">
                 bachelor of Science in Information Technology (IT) - Information
@@ -40,7 +40,7 @@ export default function About() {
             </div>
           </div>
           <div className="space-y-2">
-            <p className="lg:text-des-md text-ph-md">Skills</p>
+            <p className="text-ph-md lg:text-des-md">Skills</p>
             <hr />
             <ListSkill />
           </div>
