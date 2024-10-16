@@ -103,7 +103,7 @@ const projects = [
     info: "Web-Based, two-player game based on the classic Pig game.",
     image: imgPigV2,
     stacks: [<FaVuejs />, <SiJavascript />, <SiTailwindcss />, <SiVercel />],
-    demo: "https://project-2-sec-2-work-life-no-balance.vercel.app/home",
+    demo: "https://project-2-sec-2-work-life-no-balance.vercel.app",
     github: "https://github.com/WMFK98/PROJECT2-SEC-2-Work-Life-No-Balance",
   },
   {
