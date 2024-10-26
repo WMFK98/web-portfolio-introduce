@@ -13,8 +13,8 @@ export default function About() {
             <hr />
             <p className="text-ph-sm font-light leading-7 lg:text-des-sm lg:leading-[4rem]">
               Nickname: Fluke <br /> Name : Wichira Marakompa <br /> Birthdate:
-              8 april 2004 <br /> Interest: front-end developer <br /> Hobbies:
-              Game, Gym, Movie
+              8 april 2004 <br /> Interests: Full-Stack Developer
+              <br /> Hobbies: Game, Gym, Movie
             </p>
           </div>
           <div className="w-[50%]">
