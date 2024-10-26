@@ -13,6 +13,8 @@ import {
   SiDocker,
   SiUbuntu,
   SiVercel,
+  SiCsharp,
+  SiDotnet,
 } from "react-icons/si";
 import { RiNextjsFill } from "react-icons/ri";
 import {
@@ -39,6 +41,8 @@ export default function ListSkill() {
     { icon: <SiTailwindcss />, name: "Tailwind CSS" },
     { icon: <FaJava />, name: "Java" },
     { icon: <SiSpringboot />, name: "Spring Boot" },
+    { icon: <SiCsharp color="yellow" />, name: "C# (learning)" },
+    { icon: <SiDotnet color="yellow" />, name: ".Net (learning)" },
     { icon: <SiSupabase />, name: "Supabase" },
     { icon: <SiMysql />, name: "MySQL" },
     { icon: <FaLinux />, name: "Linux" },
